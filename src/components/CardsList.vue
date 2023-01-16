@@ -1,8 +1,11 @@
 <script>
-
+import CharacterCard from './CharacterCard.vue';
 import { store } from '../store.js'
 
 export default {
+    components:{
+        CharacterCard
+    },
     data(){
         return{
             store
@@ -14,7 +17,7 @@ export default {
     <main class="container">
         <div class="row">
             <div class="col">
-                Character card
+                <CharacterCard v-for="(item,index) in store.cardsList" ::key="index" :card="item" />
             </div>
         </div>
     </main>
@@ -24,6 +27,10 @@ export default {
 
     main{
         background-color: $white-color;
-        margin: 3rem;
+        margin: 1rem;
+    }
+    .col{
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>
