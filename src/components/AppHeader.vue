@@ -13,8 +13,14 @@ export default {
     </header>
 </template>
 <style lang="scss" scoped>
-    @use '../styles/partials/variables';
+    @use '../styles/partials/variables'as *;
     header{
-        background-color: $white-color;
+        .col{
+            height: 100px;
+            background-color: $white-color;
+                h1{
+                    padding-top: 10px;
+                }
+        }
     }
 </style>
